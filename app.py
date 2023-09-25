@@ -27,7 +27,7 @@ def analyse_clicked(text):
   st.session_state.df = make_prediction(text)
 
 st.title("Sentiment Analysis with Wine")
-st.text("App identify possile origin of wine base on your description")
+st.text("App identify possible origin of wine base on your description")
 desc = st.text_area(label="Description",
                     height=140,
                     placeholder="""
