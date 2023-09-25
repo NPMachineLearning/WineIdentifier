@@ -26,7 +26,7 @@ def analyse_clicked(text):
     return
   st.session_state.df = make_prediction(text)
 
-st.title("Sentiment Analysis")
+st.title("Sentiment Analysis with Wine")
 st.text("App identify possile origin of wine base on your description")
 desc = st.text_area(label="Description",
                     height=140,
@@ -42,6 +42,11 @@ st.button(label="Analyse",
           args=(desc,))
 
 if st.session_state.df is not None:
+  tips = st.columns(1)
+  with tips[0]:
+    st.write("designation: The vineyard within the winery where the grapes that made the wine are from")
+    st.write("variety: The type of grapes used to make the wine")
+
   pagination = st.container()
   bottom_menu = st.columns((4, 1, 1))
 
